@@ -16,17 +16,29 @@ public partial class dataEdit : Form
     {
         public dataEdit()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            
+
         }
 
         private void dataEdit_Load(object sender, EventArgs e)
         {
-            
-            
+
+
             //foreach (DataTable table in objectsDataSet.Tables)
             //{
             //    comboBox1.Items.Add(table.TableName);
             //}
+
+            SqlConnection sqlConnection = new SqlConnection();
+            sqlConnection = new SqlConnection("Data Source=DESKTOP-PC1; Integrated Security=SSPI; Initial Catalog=objects;");
+            sqlConnection.Open();
+            SqlCommand comand = sqlConnection.CreateCommand();
+            comand.CommandText = "SELECT * FROM COUNTRIES";
+            SqlDataReader reader = comand.ExecuteReader();
+            int i = 0;
+            while (reader.Read()) { MessageBox.Show(reader[1].ToString()); i+=(1/2); }
+            
         }
 
         private void showButton_Click(object sender, EventArgs e)
@@ -36,10 +48,6 @@ public partial class dataEdit : Form
                 MessageBox.Show("Please select table");
                 return;
             }
-            //dataGridView1.DataSource = objectsDataSet;
-            //dataGridView1.DataMember = comboBox1.SelectedItem.ToString();
-            //dataGridView1.Update();
-            //objectsDataSetTableAdapters.;
         }
 
         private void editButton_Click(object sender, EventArgs e)

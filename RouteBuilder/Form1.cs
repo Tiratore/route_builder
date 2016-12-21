@@ -29,8 +29,8 @@ namespace RouteBuilder
 
         private void adminModeButton_Click(object sender, EventArgs e)
         {
-            dataEdit editForm = new dataEdit();
-            editForm.ShowDialog();
+            //dataEdit editForm = new dataEdit();
+            //editForm.ShowDialog();
         }
     }
 }

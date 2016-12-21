@@ -16,7 +16,9 @@ namespace RouteBuilder
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new mainWindow());
+            //Application.Run(new mainWindow());
+            dataEdit editForm = new dataEdit();
+            editForm.ShowDialog();
         }
     }
 }
