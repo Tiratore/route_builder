@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dataEdit));
@@ -41,17 +40,8 @@
             this.searchTextBox = new System.Windows.Forms.TextBox();
             this.searchButton = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.objectsDataSet = new RouteBuilder.objectsDataSet();
-            this.countriesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.countriesTableAdapter = new RouteBuilder.objectsDataSetTableAdapters.countriesTableAdapter();
-            this.countriesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.countryidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countrynameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.objectsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.countriesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.countriesBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -130,7 +120,6 @@
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoGenerateColumns = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -140,11 +129,7 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.countryidDataGridViewTextBoxColumn,
-            this.countrynameDataGridViewTextBoxColumn});
             this.tableLayoutPanel1.SetColumnSpan(this.dataGridView1, 7);
-            this.dataGridView1.DataSource = this.countriesBindingSource1;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
@@ -188,37 +173,6 @@
             this.comboBox1.TabIndex = 0;
             this.comboBox1.Text = "Select Table";
             // 
-            // objectsDataSet
-            // 
-            this.objectsDataSet.DataSetName = "objectsDataSet";
-            this.objectsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // countriesBindingSource
-            // 
-            this.countriesBindingSource.DataMember = "countries";
-            this.countriesBindingSource.DataSource = this.objectsDataSet;
-            // 
-            // countriesTableAdapter
-            // 
-            this.countriesTableAdapter.ClearBeforeFill = true;
-            // 
-            // countriesBindingSource1
-            // 
-            this.countriesBindingSource1.DataMember = "countries";
-            this.countriesBindingSource1.DataSource = this.objectsDataSet;
-            // 
-            // countryidDataGridViewTextBoxColumn
-            // 
-            this.countryidDataGridViewTextBoxColumn.DataPropertyName = "country_id";
-            this.countryidDataGridViewTextBoxColumn.HeaderText = "country_id";
-            this.countryidDataGridViewTextBoxColumn.Name = "countryidDataGridViewTextBoxColumn";
-            // 
-            // countrynameDataGridViewTextBoxColumn
-            // 
-            this.countrynameDataGridViewTextBoxColumn.DataPropertyName = "country_name";
-            this.countrynameDataGridViewTextBoxColumn.HeaderText = "country_name";
-            this.countrynameDataGridViewTextBoxColumn.Name = "countrynameDataGridViewTextBoxColumn";
-            // 
             // dataEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -233,9 +187,6 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.objectsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.countriesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.countriesBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -249,13 +200,7 @@
         private System.Windows.Forms.Button delButton;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private objectsDataSet objectsDataSet;
         private System.Windows.Forms.TextBox searchTextBox;
         private System.Windows.Forms.Button searchButton;
-        private System.Windows.Forms.BindingSource countriesBindingSource;
-        private objectsDataSetTableAdapters.countriesTableAdapter countriesTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn countryidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn countrynameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource countriesBindingSource1;
     }
 }

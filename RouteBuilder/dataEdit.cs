@@ -23,10 +23,10 @@ public partial class dataEdit : Form
         {
             
             
-            foreach (DataTable table in objectsDataSet.Tables)
-            {
-                comboBox1.Items.Add(table.TableName);
-            }
+            //foreach (DataTable table in objectsDataSet.Tables)
+            //{
+            //    comboBox1.Items.Add(table.TableName);
+            //}
         }
 
         private void showButton_Click(object sender, EventArgs e)
@@ -36,8 +36,8 @@ public partial class dataEdit : Form
                 MessageBox.Show("Please select table");
                 return;
             }
-            dataGridView1.DataSource = objectsDataSet;
-            dataGridView1.DataMember = comboBox1.SelectedItem.ToString();
+            //dataGridView1.DataSource = objectsDataSet;
+            //dataGridView1.DataMember = comboBox1.SelectedItem.ToString();
             //dataGridView1.Update();
             //objectsDataSetTableAdapters.;
         }
