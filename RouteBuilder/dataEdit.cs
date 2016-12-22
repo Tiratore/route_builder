@@ -14,31 +14,29 @@ namespace RouteBuilder
 
 public partial class dataEdit : Form
     {
+        public string connectionString = "Data Source=DESKTOP-PC1; Integrated Security=SSPI; Initial Catalog=objects;";
+
         public dataEdit()
         {
             InitializeComponent();
-            
-
         }
 
         private void dataEdit_Load(object sender, EventArgs e)
         {
-
-
-            //foreach (DataTable table in objectsDataSet.Tables)
-            //{
-            //    comboBox1.Items.Add(table.TableName);
-            //}
-
             SqlConnection sqlConnection = new SqlConnection();
-            sqlConnection = new SqlConnection("Data Source=DESKTOP-PC1; Integrated Security=SSPI; Initial Catalog=objects;");
+            sqlConnection = new SqlConnection(connectionString);
             sqlConnection.Open();
             SqlCommand comand = sqlConnection.CreateCommand();
-            comand.CommandText = "SELECT * FROM COUNTRIES";
+            comand.CommandText = "select * from sys.objects where type_desc = 'USER_TABLE'";
             SqlDataReader reader = comand.ExecuteReader();
-            int i = 0;
-            while (reader.Read()) { MessageBox.Show(reader[1].ToString()); i+=(1/2); }
-            
+            while (reader.Read())
+            {
+                if (reader[0].ToString() != "sysdiagrams") {
+                    comboBox1.Items.Add(reader[0].ToString());
+                }
+            }
+            sqlConnection.Dispose();
+            sqlConnection.Close();            
         }
 
         private void showButton_Click(object sender, EventArgs e)
@@ -59,6 +57,25 @@ public partial class dataEdit : Form
             }
             //editForm Form = new editForm(comboBox1.SelectedItem.ToString());
             //dbOperForm.ShowDialog();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlConnection sqlConnection = new SqlConnection();
+            sqlConnection = new SqlConnection(connectionString);
+            sqlConnection.Open();
+            SqlCommand comand = sqlConnection.CreateCommand();
+            comand.CommandText = "select * from " + comboBox1.SelectedItem.ToString();
+            SqlDataReader reader = comand.ExecuteReader();
+            int i = 0;
+            while (reader.Read())
+            {
+                MessageBox.Show(reader.GetName(i).ToString());
+                dataGridView1.
+                i++;
+            }
+            sqlConnection.Dispose();
+            sqlConnection.Close();
         }
     }
 }
